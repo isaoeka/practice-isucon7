@@ -1,0 +1,8 @@
+venv/
+
+# IDE
+/.idea
+*.iml
+
+Makefile
+
