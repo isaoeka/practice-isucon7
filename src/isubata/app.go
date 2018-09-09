@@ -765,29 +765,6 @@ func tRange(a, b int64) []int64 {
 	return r
 }
 
-func writeImage(name string, data []byte) error {
-	path := `/home/isucon/isubata/webapp/public/icons/` + name
-	if _, err := os.Stat(path); os.IsNotExist(err) {
-		// ファイルがないときだけ書く
-		err := ioutil.WriteFile(path, data, 0644)
-		if err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-//func writeImageFile() int64 {
-//	file, err := os.Create(`/path/to/file`)
-//	if err != nil {
-//		// Openエラー処理
-//	}
-//	defer file.Close()
-//
-//	output := "testmessage"
-//	file.Write(([]byte)(output))
-//}
-
 func main() {
 	e := echo.New()
 	funcs := template.FuncMap{
